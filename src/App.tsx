@@ -1,3 +1,5 @@
+import Display from "./components/Display/Display";
+
 const App = (): JSX.Element => {
   return (
     <>
@@ -41,7 +43,7 @@ const App = (): JSX.Element => {
           </ol>
         </div>
         <div className="actions">
-          <span className="number">667359961</span>
+          <Display />
           <a href="call" className="call">
             Call
           </a>
