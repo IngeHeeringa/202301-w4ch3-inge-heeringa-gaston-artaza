@@ -1,3 +1,4 @@
+import Actions from "./components/Actions/Actions";
 import Display from "./components/Display/Display";
 import Info from "./components/Info/Info";
 import Keyboard from "./components/Keyboard/Keyboard";
@@ -12,12 +13,7 @@ const App = (): JSX.Element => {
         </div>
         <div className="actions">
           <Display />
-          <a href="call" className="call">
-            Call
-          </a>
-          <a href="hang-up" className="hang active">
-            Hang up
-          </a>
+          <Actions />
         </div>
       </main>
     </>
