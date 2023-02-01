@@ -1,6 +1,4 @@
-import React from "react";
-
-const Display = () => {
+const Display = (): JSX.Element => {
   return <span className="number">667359961</span>;
 };
 
