@@ -25,21 +25,26 @@
 
 ## INFO
 
+- Receives the 'is calling' status
 - Shows the 'is calling' status
 
 ## DISPLAY
 
-- Shows the result of the 'add a number' function
-- Shows the result of the 'clear the number' function
+- Receives phone number
+- Receives the result of the 'add a number' function
+- Receives the result of the 'clear the number' function
+- Shows the phone number
 
 ## ACTIONS
 
-### ACTION
-
+- Receives 'Is calling' status
+- Shows 'Is calling' or not
 - One of the 'Action' components takes the function to call
 - One of the 'Action' components takes the function to hung up
 
 ## KEYBOARD
+
+- Receives 'Is calling' status
 
 ### KEY
 

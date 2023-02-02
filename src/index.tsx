@@ -2,15 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import { Provider } from "./context/PhoneContext";
+import PhoneContextProvider from "./context/PhoneContextProvider";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Provider>
+    <PhoneContextProvider>
       <App />
-    </Provider>
+    </PhoneContextProvider>
   </React.StrictMode>
 );

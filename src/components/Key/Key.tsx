@@ -1,19 +1,22 @@
 import { useContext } from "react";
-import { PhoneContext, StoreStructure } from "../../context/PhoneContext";
+import {
+  PhoneContext,
+  PhoneContextStructure,
+} from "../../context/PhoneContext";
 
 interface KeyProps {
-  keyValue: string;
+  keyText: string;
 }
 
-const Key = ({ keyValue }: KeyProps): JSX.Element => {
-  const { addDigit } = useContext(PhoneContext) as StoreStructure;
+const Key = ({ keyText }: KeyProps): JSX.Element => {
+  const { addDigit } = useContext(PhoneContext) as PhoneContextStructure;
 
   return (
     <button
-      onClick={() => addDigit(keyValue)}
-      className={`key${keyValue === "delete" ? " big" : ""}`}
+      onClick={() => addDigit(keyText)}
+      className={`key${keyText === "delete" ? " big" : ""}`}
     >
-      {keyValue}
+      {keyText}
     </button>
   );
 };
