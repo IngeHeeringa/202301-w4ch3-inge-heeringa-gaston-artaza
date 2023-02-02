@@ -13,6 +13,13 @@ const Actions = (): JSX.Element => {
     setTimeout(setIsCallingFalse, 5000);
   };
 
+  const handleClickIsCallingFalse = (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    event.preventDefault();
+    setIsCallingFalse();
+  };
+
   return !isCalling ? (
     phoneNumber.length === 9 ? (
       <a href="call" className="call active" onClick={handleClickIsCallingTrue}>
@@ -24,7 +31,11 @@ const Actions = (): JSX.Element => {
       </a>
     )
   ) : (
-    <a href="hang-up" className="hang active" onClick={() => setIsCallingFalse}>
+    <a
+      href="hang-up"
+      className="hang active"
+      onClick={handleClickIsCallingFalse}
+    >
       Hang up
     </a>
   );
