@@ -7,12 +7,11 @@ describe("Given a Display component", () => {
     test("Then it should show a display with phone number '123' on the screen", () => {
       const store = {
         phoneNumber: "123",
-
         addDigit: () => {},
-        controlCallingStatus: () => {},
-        isCalling: false,
-
         deletePhoneNumber: () => {},
+        isCalling: false,
+        setIsCallingFalse: () => {},
+        setIsCallingTrue: () => {},
       };
 
       render(
