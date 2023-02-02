@@ -1,12 +1,21 @@
 import { PhoneContext } from "../../context/PhoneContext";
-import { useContext } from "react";
+import React, { useContext } from "react";
 
 const Actions = (): JSX.Element => {
-  const { isCalling, phoneNumber } = useContext(PhoneContext);
+  const { isCalling, phoneNumber, setIsCallingFalse, setIsCallingTrue } =
+    useContext(PhoneContext);
+
+  const handleClickIsCallingTrue = (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    event.preventDefault();
+    setIsCallingTrue();
+    setTimeout(setIsCallingFalse, 5000);
+  };
 
   return !isCalling ? (
     phoneNumber.length === 9 ? (
-      <a href="call" className="call active">
+      <a href="call" className="call active" onClick={handleClickIsCallingTrue}>
         Call
       </a>
     ) : (
@@ -15,7 +24,7 @@ const Actions = (): JSX.Element => {
       </a>
     )
   ) : (
-    <a href="hang-up" className="hang active">
+    <a href="hang-up" className="hang active" onClick={() => setIsCallingFalse}>
       Hang up
     </a>
   );

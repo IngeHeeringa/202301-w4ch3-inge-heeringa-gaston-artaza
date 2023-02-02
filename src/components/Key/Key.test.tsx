@@ -23,7 +23,8 @@ describe("Given a Key component", () => {
         phoneNumber: "",
         addDigit: addDigit,
         deletePhoneNumber: () => {},
-        controlCallingStatus: () => {},
+        setIsCallingFalse: () => {},
+        setIsCallingTrue: () => {},
         isCalling: false,
       };
 
@@ -49,8 +50,9 @@ describe("Given a Key component", () => {
         phoneNumber: "",
         addDigit: () => {},
         deletePhoneNumber: deletePhoneNumber,
-        controlCallingStatus: () => {},
         isCalling: false,
+        setIsCallingFalse: () => {},
+        setIsCallingTrue: () => {},
       };
 
       render(

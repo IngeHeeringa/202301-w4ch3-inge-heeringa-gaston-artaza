@@ -17,8 +17,13 @@ const PhoneContextProvider = ({ children }: PhoneContextProviderProps) => {
     );
   };
 
-  const controlCallingStatus = (): void => {
-    setIsCalling(!isCalling);
+  const setIsCallingFalse = (): void => {
+    setIsCalling(false);
+  };
+
+  const setIsCallingTrue = (): void => {
+    setIsCalling(true);
+    setPhoneNumber("");
   };
 
   const deletePhoneNumber = () => {
@@ -28,9 +33,10 @@ const PhoneContextProvider = ({ children }: PhoneContextProviderProps) => {
   const store = {
     phoneNumber,
     addDigit,
-    controlCallingStatus,
-    isCalling,
     deletePhoneNumber,
+    isCalling,
+    setIsCallingFalse,
+    setIsCallingTrue,
   };
 
   return (

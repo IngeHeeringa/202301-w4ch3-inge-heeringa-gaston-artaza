@@ -1,5 +1,10 @@
+import { useContext } from "react";
+import { PhoneContext } from "../../context/PhoneContext";
+
 const Info = (): JSX.Element => {
-  return <span className="message">Calling...</span>;
+  const { isCalling } = useContext(PhoneContext);
+
+  return isCalling ? <span className="message">Calling...</span> : <></>;
 };
 
 export default Info;

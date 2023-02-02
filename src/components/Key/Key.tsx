@@ -13,7 +13,7 @@ const Key = ({ keyText }: KeyProps): JSX.Element => {
     PhoneContext
   ) as PhoneContextStructure;
 
-  return keyText === "delete" ? (
+  return keyText.length > 1 ? (
     <button onClick={() => deletePhoneNumber()} className={`key big`}>
       {keyText}
     </button>
