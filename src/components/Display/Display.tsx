@@ -1,8 +1,11 @@
 import { useContext } from "react";
-import { PhoneContext, StoreStructure } from "../../context/PhoneContext";
+import {
+  PhoneContext,
+  PhoneContextStructure,
+} from "../../context/PhoneContext";
 
 const Display = (): JSX.Element => {
-  const { phoneNumber } = useContext(PhoneContext) as StoreStructure;
+  const { phoneNumber } = useContext(PhoneContext) as PhoneContextStructure;
 
   return <span className="number">{phoneNumber}</span>;
 };
