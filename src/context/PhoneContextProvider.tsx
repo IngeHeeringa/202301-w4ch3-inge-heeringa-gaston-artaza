@@ -12,7 +12,11 @@ const PhoneContextProvider = ({ children }: PhoneContextProviderProps) => {
     setPhoneNumber(phoneNumber + (keyText === "delete" ? "" : keyText));
   };
 
-  const store = { phoneNumber, addDigit };
+  const deletePhoneNumber = () => {
+    setPhoneNumber("");
+  };
+
+  const store = { phoneNumber, addDigit, deletePhoneNumber };
 
   return (
     <PhoneContext.Provider value={store}>{children}</PhoneContext.Provider>
