@@ -7,16 +7,27 @@ interface PhoneContextProviderProps {
 
 const PhoneContextProvider = ({ children }: PhoneContextProviderProps) => {
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [isCalling, setIsCalling] = useState(false);
 
   const addDigit = (keyText: string): void => {
     setPhoneNumber(phoneNumber + (keyText === "delete" ? "" : keyText));
+  };
+
+  const controlCallingStatus = (): void => {
+    setIsCalling(!isCalling);
   };
 
   const deletePhoneNumber = () => {
     setPhoneNumber("");
   };
 
-  const store = { phoneNumber, addDigit, deletePhoneNumber };
+  const store = {
+    phoneNumber,
+    addDigit,
+    controlCallingStatus,
+    isCalling,
+    deletePhoneNumber,
+  };
 
   return (
     <PhoneContext.Provider value={store}>{children}</PhoneContext.Provider>
