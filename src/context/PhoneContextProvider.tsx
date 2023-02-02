@@ -10,7 +10,11 @@ const PhoneContextProvider = ({ children }: PhoneContextProviderProps) => {
   const [isCalling, setIsCalling] = useState(false);
 
   const addDigit = (keyText: string): void => {
-    setPhoneNumber(phoneNumber + (keyText === "delete" ? "" : keyText));
+    setPhoneNumber(
+      phoneNumber.length < 9
+        ? phoneNumber + (keyText === "delete" ? "" : keyText)
+        : phoneNumber
+    );
   };
 
   const controlCallingStatus = (): void => {
