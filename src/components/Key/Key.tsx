@@ -9,13 +9,16 @@ interface KeyProps {
 }
 
 const Key = ({ keyText }: KeyProps): JSX.Element => {
-  const { addDigit } = useContext(PhoneContext) as PhoneContextStructure;
+  const { addDigit, deletePhoneNumber } = useContext(
+    PhoneContext
+  ) as PhoneContextStructure;
 
-  return (
-    <button
-      onClick={() => addDigit(keyText)}
-      className={`key${keyText === "delete" ? " big" : ""}`}
-    >
+  return keyText === "delete" ? (
+    <button onClick={() => deletePhoneNumber()} className={`key big`}>
+      {keyText}
+    </button>
+  ) : (
+    <button onClick={() => addDigit(keyText)} className={`key`}>
       {keyText}
     </button>
   );

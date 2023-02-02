@@ -5,6 +5,7 @@ export interface PhoneContextStructure {
   addDigit: (keyText: string) => void;
   controlCallingStatus: () => void;
   isCalling: boolean;
+  deletePhoneNumber: () => void;
 }
 
 export const PhoneContext = createContext({} as PhoneContextStructure);
